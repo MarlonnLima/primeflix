@@ -11,15 +11,15 @@ export default function RoutesApp(){
         <HashRouter>
             <Header/>
             <Routes>
-                    <Route path = "/primeflix/" element = {<Home />} />
-                    <Route path = "/primeflix/filme/:id" element = {<Filme />} />
-                    <Route path = "/primeflix/favoritos" element = {<Favoritos />} />
+                    <Route path = "/" element = {<Home />} />
+                    <Route path = "/filme/:id" element = {<Filme />} />
+                    <Route path = "/favoritos" element = {<Favoritos />} />
 
 
 
 
 
-                    <Route path = "/primeflix/*" element = {<Erro />} />         
+                    <Route path = "*" element = {<Erro />} />         
             </Routes>
         </HashRouter>
     )

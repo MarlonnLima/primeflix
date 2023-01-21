@@ -19,7 +19,7 @@ export default function RoutesApp(){
 
 
 
-                    <Route path = "*" element = {<Erro />} />         
+                    <Route path = "/primeflix/*" element = {<Erro />} />         
                 </Routes>
         </BrowserRouter>
     )

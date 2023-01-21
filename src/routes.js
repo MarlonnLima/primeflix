@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter,} from "react-router-dom";
 
 import Home from "./pages/Home"
 import Filme from "./pages/Filme"
@@ -8,9 +8,9 @@ import Favoritos from "./pages/Favoritos";
 
 export default function RoutesApp(){
     return(
-        <BrowserRouter>
+        <HashRouter>
             <Header/>
-                <Routes>
+            <Routes>
                     <Route path = "/primeflix/" element = {<Home />} />
                     <Route path = "/primeflix/filme/:id" element = {<Filme />} />
                     <Route path = "/primeflix/favoritos" element = {<Favoritos />} />
@@ -20,7 +20,7 @@ export default function RoutesApp(){
 
 
                     <Route path = "/primeflix/*" element = {<Erro />} />         
-                </Routes>
-        </BrowserRouter>
+            </Routes>
+        </HashRouter>
     )
 }

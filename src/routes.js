@@ -11,9 +11,9 @@ export default function RoutesApp(){
         <BrowserRouter>
             <Header/>
                 <Routes>
-                    <Route path = "/" element = {<Home />} />
-                    <Route path = "/filme/:id" element = {<Filme />} />
-                    <Route path = "/favoritos" element = {<Favoritos />} />
+                    <Route path = "/primeflix/" element = {<Home />} />
+                    <Route path = "/primeflix/filme/:id" element = {<Filme />} />
+                    <Route path = "/primeflix/favoritos" element = {<Favoritos />} />
 
 
 

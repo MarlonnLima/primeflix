@@ -1,0 +1,24 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+.app{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gradient{
+  background-image: linear-gradient(to right, #e0ce1c, #dec41c, #dcbb1d, #d9b11f, #d6a821, #d99b21, #da8f23, #da8227, #dd6e30, #dd593b, #d94547, #d13054);    
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,50 @@
+.img-banner{
+    background-image: url(https://images.adsttc.com/media/images/58d5/3a58/e58e/ce48/a700/003f/large_jpg/002.jpg?1490369108);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 450px;
+    width: 100%;
+    
+}
+.container-flex-banner{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-flex-banner h1{
+    font-size: 54px;
+    
+}
+.container-flex-banner h2{
+    font-size: 36px;
+}
+
+.container-flex-banner h1 , h2{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media(max-width: 975px){
+    .container-flex-banner h1, h2{
+        width: 80%;
+    }
+}
+
+@media(max-width: 550px){
+    .container-flex-banner h1, h2{
+        width: 90%;
+        text-align: center;
+    }
+    .container-flex-banner h1{
+        font-size: 28px;
+    }
+    .container-flex-banner h2{
+        font-size: 18px;
+    }
+}

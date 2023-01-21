@@ -26,10 +26,10 @@
 }
 
 .area-buttons button{
-    margin-right: 12px;
+    margin-right: 5%;
     border: 0px;
-    width: 100px;
-    height: 30px;
+    width: 45%;
+    height: 50px;
     background-color: #116feb;
     transition: 0.5s;
 }

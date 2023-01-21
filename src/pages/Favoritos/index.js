@@ -33,8 +33,8 @@ export default function Favoritos(){
                     <img src = {`https://image.tmdb.org/t/p/original/${filme.poster_path}`} alt ={filme.title} />
                         <span>{filme.title}</span>
                         <div>
-                            <Link className = "link-favorito" to={`/filme/${filme.id}`}>Detalhes</Link>
-                            <button onClick= {() => excluirFilme(filme.id)}>Excluir</button>
+                            <Link className = "link-favorito" to={`/filme/${filme.id}`}>📄Detalhes</Link>
+                            <button onClick= {() => excluirFilme(filme.id)}>🗑️Excluir</button>
                         </div>
                     </li>
                 )

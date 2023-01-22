@@ -17,7 +17,7 @@ header{
     transition: 0.5s;
 }
 .logo:hover{
-    letter-spacing: 5px;
+    scale: 1.05;
 }
 .favoritos{
     text-decoration: none;
@@ -31,11 +31,5 @@ header{
 
 .favoritos:hover{
     background-color: gainsboro;
-    scale: 1.1;
-}
-
-@media(max-width: 350px){
-    .logo:hover{
-        letter-spacing: 0px;
-    }
+    scale: 1.05;
 }

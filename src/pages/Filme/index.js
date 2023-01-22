@@ -3,8 +3,11 @@ import {useParams} from 'react-router-dom'
 import api from '../../services/api'
 import './style.css'
 import { toast} from 'react-toastify'
+import Loading from '../../components/Loading'
+import AOS from 'aos'
+
 export default function Filme(){
-    let contador = 0;
+
     const { id } = useParams();
     const [filme, setFilme] = useState({})
     const [loading, setLoading] = useState(true)
@@ -25,7 +28,7 @@ export default function Filme(){
             })
         }
         loadFilme();
-
+        AOS.init();
 
         return () => { 
             console.log('component foi desmontado')
@@ -50,17 +53,17 @@ export default function Filme(){
      }
     if(loading){
         return(
-        <div className='filme-info'>
-            <h1>Carregando Detalhes...</h1>
+        <div>
+            <Loading />
         </div>
         )
     }
 
     return(
         <div className='filme-info'>
-            <h1>{filme.title}</h1>
-           <img src = {`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt ={filme.title} />
-           <h3>Sinopse:</h3>
+            <h1 data-aos = "zoom-in" data-aos-duration="500">{filme.title}</h1>
+           <img data-aos = "zoom-in" data-aos-duration="500" src = {`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt ={filme.title} />
+           <h3 data-aos = "zoom-in"  data-aos-duration="500">Sinopse:</h3>
            <span>{filme.overview}</span>
 
            <strong>Avaliação: {filme.vote_average.toFixed(2)} /10 ☆</strong>

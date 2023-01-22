@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import "./favoritos.css"
 import { toast } from "react-toastify"
+import AOS from 'aos'
 export default function Favoritos(){
 
     const [filmes, setFilmes] = useState([])
@@ -9,6 +10,8 @@ export default function Favoritos(){
     useEffect(()=>{
         const minhaLista = localStorage.getItem("@primeflix");
         setFilmes(JSON.parse(minhaLista) || [])
+
+        AOS.init();
     }, [])
 
     function excluirFilme(id){
@@ -26,7 +29,7 @@ export default function Favoritos(){
 
         {filmes.length === 0 && <span>Você não possui nenhum filme salvo :(</span>}
 
-        <ul className='container-favoritos'>
+        <ul data-aos ="fade-right" className='container-favoritos'>
             {filmes.map((filme) =>{
                 return(
                     <li className='filme-favorito' key = {filme.id}>
@@ -36,7 +39,9 @@ export default function Favoritos(){
                             <Link className = "link-favorito" to={`/filme/${filme.id}`}>📄Detalhes</Link>
                             <button onClick= {() => excluirFilme(filme.id)}>🗑️Excluir</button>
                         </div>
+                        <hr />
                     </li>
+                    
                 )
             })}
         </ul>

@@ -3,6 +3,9 @@ import api from "../../services/api"
 import {Link} from 'react-router-dom'
 import './home.css'
 import Banner from "../../components/Banner";
+import Loading from '../../components/Loading';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // https://api.themoviedb.org/3/ 
 
 export default function Home(){
@@ -22,13 +25,14 @@ export default function Home(){
             setFilmes(response.data.results)
             setLoading(false)
         }
-        loadFilmes()
+        loadFilmes();
+        AOS.init();
     }, [])
     
     if(loading){
         return(
-            <div className='loading'>
-                <h2>Carregando filmes...</h2>
+            <div>
+                <Loading />
             </div>
             )
     }
@@ -39,7 +43,7 @@ export default function Home(){
                 <h2 className='secao-lancamentos'>Lançamentos</h2>
                 {filmes.map((filme)=>{
                     return(
-                        <article key = {filme.id}>
+                        <article data-aos = "fade-out" key = {filme.id}>
                             <strong>{filme.title}</strong>
                             <img src = {`https://image.tmdb.org/t/p/original/${filme.poster_path}`} alt ={filme.title} />
                             <Link to = {`/filme/${filme.id}`}>Acessar</Link>
